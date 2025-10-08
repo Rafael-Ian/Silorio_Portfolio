@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="calc">
+  <h2>Area of a Triangle</h2>
+  <form method="post" class="form">
+    <label for="base">Base:</label>
+    <input type="text" name="base" id="base" value="{{ base if base is not none else '' }}" placeholder="Enter base">
+    <label for="height">Height:</label>
+    <input type="text" name="height" id="height" value="{{ height if height is not none else '' }}" placeholder="Enter height">
+    <button type="submit">Calculate</button>
+  </form>
+
+  {% if error %}
+    <p class="error">{{ error }}</p>
+  {% endif %}
+
+  {% if result is not none %}
+    <p class="result">Area = <strong>{{ result }}</strong> (units²)</p>
+  {% endif %}
+</section>
+{% endblock %}

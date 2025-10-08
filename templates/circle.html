@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="calc">
+  <h2>Area of a Circle</h2>
+  <form method="post" class="form">
+    <label for="radius">Radius:</label>
+    <input type="text" name="radius" id="radius" value="{{ radius if radius is not none else '' }}" placeholder="Enter radius">
+    <button type="submit">Calculate</button>
+  </form>
+
+  {% if error %}
+    <p class="error">{{ error }}</p>
+  {% endif %}
+
+  {% if result is not none %}
+    <p class="result">Area = <strong>{{ result }}</strong> (units²)</p>
+  {% endif %}
+</section>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero">
+  <h1>Welcome!</h1>
+  <p>Hi, I'm <strong>Rafael Ian C. Silorio</strong>. A second year student from Polytechnic University of the Philippines. This is my personal portfolio web application.</p>
+  <p>Use the navigation bar to explore my profile, contact details, and some small programming exercises.</p>
+  <div class="tiles">
+    <a class="tile" href="{{ url_for('profile') }}">Profile</a>
+    <a class="tile" href="{{ url_for('circle') }}">Area of Circle</a>
+    <a class="tile" href="{{ url_for('triangle') }}">Area of Triangle</a>
+    <a class="tile" href="{{ url_for('contact') }}">Contact</a>
+  </div>
+</section>
+{% endblock %}
